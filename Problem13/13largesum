@@ -1,0 +1,6 @@
+nums = File.open("13NumberList.txt", 'rb') {|file| file.read}
+nums.split("\r\n").inject(0) do |sum,num|
+	sum + num
+end
+
+print sum.to_s.split("")[0..9]

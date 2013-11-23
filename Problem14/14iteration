@@ -1,0 +1,29 @@
+def Collatz_sequence(num, iter)
+if num != 1 then
+	if num.even? then
+	iter += 1
+	#puts "#{num/2}	#{iter}"
+	Collatz_sequence(num/2, iter)
+	
+	else
+	iter += 1
+	#puts "#{3*num + 1}	#{iter}"
+	Collatz_sequence(3*num + 1, iter)	
+	end
+else
+return iter
+end
+end
+
+highestiter = 0
+highestx = 0
+(1...1000000).each do |x|
+a = Collatz_sequence(x, 1)
+if a > highestiter then
+	highestiter = a
+	highestx = x
+end
+end
+
+puts highestx, highestiter
+	 
